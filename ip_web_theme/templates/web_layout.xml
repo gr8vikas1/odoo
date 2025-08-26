@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="layout" inherit_id="web.layout">
+		<xpath expr="//link[@rel='shortcut icon']" position="before">
+			<t 
+		    	t-set="x_icon" 
+		    	t-value="x_icon or '/web/image/res.company/%s/favicon' % request.env.company.id"
+	    	/>
+		</xpath>
+		<xpath expr="//head" position="inside">
+			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+			<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+		</xpath>
+	</template>
+</odoo>

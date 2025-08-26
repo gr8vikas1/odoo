@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="webclient_bootstrap" name="Web Client" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-set='body_classname']" position="after">
+            <t t-set="body_sidebar_classname" t-value="'mk_sidebar_type_' + request.env.user.sidebar_type or 'large'"/>
+            <t t-set="body_classname" t-value="'%s %s' % (body_classname, body_sidebar_classname)"/>
+            <t t-set="body_classname" t-value="'%s mk_theme_mode_%s' % (body_classname, request.env.user.theme_mode or 'light')"/>
+        </xpath>
+        <xpath expr="//meta[@name='theme-color']" position="replace">
+            <meta 
+            	name="theme-color" 
+            	t-att-content="'#242733' if request.httprequest.cookies.get('color_scheme') == 'dark' else '#714B67'"
+            />
+        </xpath>
+    </template>
+</odoo>

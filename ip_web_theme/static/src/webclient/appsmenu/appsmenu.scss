@@ -1,0 +1,100 @@
+// Variable for the app name color for easy customization
+$mk-appsmenu-color: #4a5568;
+
+// Style for the menu toggle button (mostly unchanged)
+.o_navbar_apps_menu .dropdown-toggle {
+	padding: 0px 14px !important;
+}
+
+// Main container for the app menu dropdown
+.mk_app_menu.dropdown-menu {
+	// --- Layout & Sizing ---
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: center; // Center the apps horizontally
+	align-content: flex-start;
+	gap: 25px; // Modern way to add space between app cards
+
+	// --- Fullscreen Overlay ---
+	right: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	max-height: 100vh;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	border: none;
+	border-radius: 0;
+	overflow-y: auto;
+	user-select: none;
+
+	// --- Background & Padding ---
+	// Soft gradient similar to the image
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+	padding: 5vh 10vw; // Responsive padding
+
+	// --- App Card Styling ---
+	.o_app {
+		margin-top: 0; // Remove old margin, we use 'gap' now
+		background: none !important;
+
+		padding: 0; // The card itself will have the background
+
+		// --- Responsive Grid ---
+		width: 122px;
+		height: 122px;
+
+		@include media-breakpoint-up(sm) {
+			width: 122px;
+			height: 122px;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: 122px;
+			height: 122px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			width: 122px;
+			height: 122px;
+		}
+
+		// --- The actual card is the <a> tag ---
+		>a {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			text-align: center;
+			padding: 20px 10px;
+			background-color: #ffffff;
+			border-radius: 10px; // More rounded corners like the image
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+			transition: all 0.2s ease-in-out;
+			height: 100%; // Make all cards in a row the same height
+
+			.mk_app_icon {
+				// The icon itself doesn't need a background or shadow anymore
+				width: 100%;
+				max-width: 50px; // Slightly smaller icon for better padding
+				height: 60px;
+				object-fit: contain; // Ensures icon fits well
+				border-radius: 0;
+				background-color: transparent;
+				box-shadow: none;
+			}
+
+			.mk_app_name {
+				color: $mk-appsmenu-color;
+				margin-top: 10px;
+				font-weight: 500;
+			}
+		}
+
+		// --- Hover effect on the card (the <a> tag) ---
+		&:hover>a {
+			transform: translateY(-5px); // Lift the card on hover
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+		}
+	}
+}
