@@ -11,34 +11,39 @@
 					<i class="oi oi-apps" />
 				</button>
 				<t t-set-slot="content">
-					<DropdownItem
-						t-foreach="this.appMenuService.getAppsMenuItems()"
-						t-as="app"
-						t-key="app.id"
-						class="'o_app'"
-						attrs="{ href: app.href, 'data-menu-xmlid': app.xmlid, 'data-section': app.id }"
-						onSelected="() => this.onNavBarDropdownItemSelection(app)"
-						closingMode="'none'"
-					>
-						<a 
-							t-att-href="app.href" 
-							t-on-click.prevent=""
+					<div class="apps-list">
+						<DropdownItem
+							t-foreach="this.appMenuService.getAppsMenuItems()"
+							t-as="app"
+							t-key="app.id"
+							class="'o_app'"
+							attrs="{ href: app.href, 'data-menu-xmlid': app.xmlid, 'data-section': app.id }"
+							onSelected="() => this.onNavBarDropdownItemSelection(app)"
+							closingMode="'none'"
 						>
-							<img 
-								t-if="app.webIconData"          		
-								class="mk_app_icon" 
-								t-att-src="app.webIconData"
-							/>
-							<img  
-								t-else="" 
-								class="mk_app_icon" 
-								src="/base/static/description/icon.png"
-							/>
-							<span class="mk_app_name">
-								<t t-out="app.label"/>
-							</span>
-						</a>
-					</DropdownItem>
+							<a 
+								t-att-href="app.href" 
+								t-on-click.prevent=""
+							>
+								<img 
+									t-if="app.webIconData"          		
+									class="mk_app_icon" 
+									t-att-src="app.webIconData"
+								/>
+								<img  
+									t-else="" 
+									class="mk_app_icon" 
+									src="/base/static/description/icon.png"
+								/>
+								<span class="mk_app_name">
+									<t t-out="app.label"/>
+								</span>
+							</a>
+						</DropdownItem>
+					</div>
+					<div t-if="sidebarImageUrl" class="mk_apps_sidebar_logo">
+						<img class="img-fluid mx-auto" t-att-src="sidebarImageUrl" alt="Logo"/>
+					</div>
 				</t>
 			</AppsMenu>
 		</xpath>

@@ -38,6 +38,7 @@
             "ip_web_theme/static/src/scss/variables.scss",
         ],
         "web.assets_web_dark": [
+            ("prepend", "ip_web_theme/static/src/scss/colors.scss"),
             (
                 "after",
                 "ip_web_theme/static/src/scss/colors.scss",
@@ -124,7 +125,7 @@
         "static/description/theme_screenshot.png",
     ],
     "installable": True,
-    "application": True,
+    "application": False,
     "auto_install": False,
     "post_init_hook": "_setup_module",
     "uninstall_hook": "_uninstall_cleanup",

@@ -5,6 +5,8 @@
             <t t-set="body_sidebar_classname" t-value="'mk_sidebar_type_' + request.env.user.sidebar_type or 'large'"/>
             <t t-set="body_classname" t-value="'%s %s' % (body_classname, body_sidebar_classname)"/>
             <t t-set="body_classname" t-value="'%s mk_theme_mode_%s' % (body_classname, request.env.user.theme_mode or 'light')"/>
+            <t t-set="body_classname" t-value="'%s %s' % (body_classname, request.env.user.dialog_size or 'medium')"/>
+            <t t-set="body_classname" t-value="'%s %s' % (body_classname, 'o_dark_mode' if request.env.user.theme_mode == 'dark' else '')"/>
         </xpath>
         <xpath expr="//meta[@name='theme-color']" position="replace">
             <meta 

@@ -2,7 +2,7 @@ import { session } from '@web/session';
 import { patch } from '@web/core/utils/patch';
 import { append, createElement, setAttributes } from '@web/core/utils/xml';
 
-import {FormCompiler} from '@web/views/form/form_compiler';
+import { FormCompiler } from '@web/views/form/form_compiler';
 
 patch(FormCompiler.prototype, {
     compile(node, params) {
@@ -19,10 +19,10 @@ patch(FormCompiler.prototype, {
         if (session.chatter_position === 'bottom') {
             const formSheetBgXml = res.querySelector('.o_form_sheet_bg');
             if (!chatterContainerHookXml || !formSheetBgXml?.parentNode) {
-            	return res;
+                return res;
             }
             const webClientViewAttachmentViewHookXml = res.querySelector(
-            	'.o_attachment_preview'
+                '.o_attachment_preview'
             );
             const chatterContainerXml = chatterContainerHookXml.querySelector(
                 "t[t-component='__comp__.mailComponents.Chatter']"

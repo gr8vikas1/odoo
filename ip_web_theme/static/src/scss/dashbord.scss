@@ -4,20 +4,9 @@
 
 // 1. Import Google Fonts
 
+
 // 2. Theme Variables
-// -----------------------------------------------------------------
-:root {
-  --hexadash-purple: #8231d3;
-  --hexadash-purple-light: #f8f0ff;
-  --hexadash-body-bg: #f8f9fb;
-  --hexadash-card-bg: #ffffff;
-  --hexadash-text-dark: #272b41;
-  --hexadash-text-light: #5a5f7d;
-  --hexadash-border-color: #e3e6ef;
-  --hexadash-success: #00aa00;
-  --hexadash-danger: #ff4d4f;
-  --hexadash-font-family: 'Jost', sans-serif;
-}
+// --------------------------------------------------------
 
 // 3. Main Body & Layout
 // -----------------------------------------------------------------
@@ -28,51 +17,55 @@ body {
 }
 
 .o_web_client>.o_action_manager {
-  background-color: var(--hexadash-body-bg);
+  background-color: var(--hexadash-body-bg) !important;
+  color: var(--hexadash-text-dark) !important;
   padding: 20px;
+
 }
 
 // 4. Sidebar (AppsBar) Styling
 // -----------------------------------------------------------------
-.mk_apps_sidebar_panel {
-  background-color: var(--hexadash-card-bg) !important;
-  border-right: 1px solid var(--hexadash-border-color);
+// .mk_apps_sidebar_panel {
+//   background-color: var(--hexadash-card-bg) !important;
+//   border-right: 1px solid var(--hexadash-border-color);
 
-  .mk_apps_sidebar_menu>li>a {
-    color: var(--hexadash-text-light) !important;
-    font-weight: 500;
-    margin: 5px 10px;
-    border-radius: 5px;
-    border-left: 3px solid transparent;
-    transition: all 0.2s ease-in-out;
+//   .mk_apps_sidebar_menu>li>a {
+//     color: var(--hexadash-text-light) !important;
+//     font-weight: 500;
+//     margin: 5px 10px;
+//     border-radius: 5px;
+//     border-left: 3px solid transparent;
+//     transition: all 0.2s ease-in-out;
 
-    .mk_apps_sidebar_icon {
-      filter: grayscale(100%) opacity(70%);
-    }
-  }
+//     .mk_apps_sidebar_icon {
+//       filter: grayscale(100%) opacity(70%);
+//     }
+//   }
 
-  .mk_apps_sidebar_menu>li:hover>a,
-  .mk_apps_sidebar_menu>li.active>a {
-    color: var(--hexadash-purple) !important;
-    background-color: var(--hexadash-purple-light) !important;
-  }
+//   .mk_apps_sidebar_menu>li:hover>a,
+//   .mk_apps_sidebar_menu>li.active>a {
+//     color: var(--hexadash-purple) !important;
+//     background-color: var(--hexadash-purple-light) !important;
+//   }
 
-  .mk_apps_sidebar_menu>li.active>a {
-    .mk_apps_sidebar_icon {
-      filter: none;
-    }
-  }
-}
+//   .mk_apps_sidebar_menu>li.active>a {
+//     .mk_apps_sidebar_icon {
+//       filter: none;
+//     }
+//   }
+// }
 
 // 5. Main Navbar (Header)
 // -----------------------------------------------------------------
 .o_main_navbar,
 .o_menu_brand,
-.o-dropdown {
+.o_menu_toggle,
+.o_main_navbar .o_menu_sections>.o-dropdown,
+.o_main_navbar .dropdown-toggle:not(.o-dropdown-toggle-custo) {
   background-color: var(--hexadash-card-bg) !important;
   border-bottom: 1px solid var(--hexadash-border-color) !important;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
-  color: #272b41 !important;
+  color: var(--hexadash-text-dark) !important;
 }
 
 .o_main_navbar .o_menu_sections>.dropdown>.dropdown-toggle:hover,
@@ -86,8 +79,7 @@ body {
 
 .o-dropdown-item {
   background-color: var(--hexadash-card-bg) !important;
-  color: #272b41 !important;
-
+  color: var(--hexadash-text-dark) !important;
 }
 
 // 6. Dashboard Components & Cards
@@ -96,17 +88,24 @@ body {
 .o_control_panel {
   background-color: transparent;
   border: none;
+  color: var(--hexadash-text-dark) !important;
+
 }
 
 .o_kanban_view .o_kanban_record,
 .o_form_sheet,
 .o_list_renderer,
-.o_graph_view .o_graph_canvas_container {
+.o_graph_view .o_graph_canvas_container,
+.o_spreadsheet_dashboard_action {
   border-radius: 12px !important;
   border: none !important;
   box-shadow: 0 5px 20px 0 rgba(130, 49, 211, 0.05) !important;
-  background-color: var(--hexadash-card-bg);
+  background-color: var(--hexadash-card-bg) !important;
+  color: var(--hexadash-text-dark) !important;
+}
 
+.o_list_renderer {
+  border: 1px solid var(--hexadash-border-color) !important;
 }
 
 .o_kanban_dashboard_graph .o_graph_canvas_container {
@@ -128,6 +127,16 @@ h6,
 .h5,
 .h6 {
   font-weight: 600;
+  color: var(--hexadash-text-dark);
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: var(--hexadash-border-color) !important;
 }
 
 .o_kanban_record_title {
@@ -143,6 +152,197 @@ h6,
   color: var(--hexadash-danger) !important;
 }
 
-.o_action_manager {
-  background-color: #f4f5f7 !important;
+.o-mail-discussSidebarBgColor {
+  background-color: var(--hexadash-card-bg) !important;
+  color: var(--hexadash-text-dark) !important;
+}
+
+.o-mail-Discuss-core {
+  background-color: var(--hexadash-card-bg) !important;
+  color: var(--hexadash-text-dark) !important;
+}
+
+.o-mail-DiscussSidebar-item.o-active,
+.o-mail-DiscussSidebar-item:hover {
+  background-color: var(--hexadash-purple-light) !important;
+  color: var(--hexadash-text-dark) !important;
+}
+
+.o-mail-DiscussSidebar-item {
+  color: var(--hexadash-text-light) !important;
+}
+
+
+.o_web_client.mk_theme_mode_dark {
+  color-scheme: dark !important;
+}
+
+.o-mail-Discuss-header {
+  background-color: var(--hexadash-card-bg) !important;
+  color: var(--hexadash-text-dark) !important;
+}
+
+.o_list_renderer .o_list_table thead {
+  background-color: var(--hexadash-thead-bg) !important;
+  color: var(--hexadash-text-dark) !important;
+  border-bottom: 1px solid var(--hexadash-border-color) !important;
+}
+
+.o_list_renderer .o_list_table thead th {
+  color: var(--hexadash-text-dark) !important;
+}
+
+.o_list_renderer .o_list_table {
+  --table-bg: var(--hexadash-card-bg) !important;
+
+}
+
+.text-900 {
+  --color: var(--hexadash-color) !important;
+}
+
+
+.text-bg-view {
+  --background-color: var(--hexadash-card-bg) !important;
+  border-radius: 12px !important;
+  padding: 10px !important;
+}
+
+.o_notebook .nav {
+  background-color: var(--hexadash-card-bg) !important;
+}
+
+.o_notebook .nav-link.active,
+.o_notebook .nav-link.active:hover,
+.o_notebook .nav-link.active:focus,
+.o_notebook .nav-link.active:active {
+
+  border-bottom-color: var(--hexadash-border-color) !important;
+}
+
+
+.o-mail-Chatter-top {
+  background-color: var(--hexadash-body-bg) !important;
+  color: var(--hexadash-text-dark) !important;
+}
+
+.o_calendar_renderer {
+  background-color: var(--hexadash-card-bg) !important;
+  --o-cw-border-color: var(--hexadash-border-color) !important;
+  color: var(--hexadash-text-dark) !important;
+}
+
+.o_form_view.o_form_nosheet,
+.o_form_view .o_form_nosheet {
+  background-color: var(--hexadash-card-bg) !important;
+
+}
+
+.app_settings_block {
+  background-color: var(--hexadash-card-bg) !important;
+}
+
+.o_setting_right_pane {
+  border-left: 1px solid var(--hexadash-border-color);
+}
+
+.o_base_settings_view .o_form_renderer .o_setting_container .settings_tab .tab:hover {
+  color: var(--hexadash-text-light) !important;
+}
+
+.dropdown-item {
+  color: var(--hexadash-text-light) !important;
+}
+
+.o_list_renderer .o_list_table .o_selected_row th:focus-within,
+.o_list_renderer .o_list_table .o_selected_row td:focus-within {
+  background-color: var(--hexadash-card-bg) !important;
+}
+
+.mk_btn_dialog_size {
+  color: var(--hexadash-text-light) !important;
+}
+
+.o_form_view:not(.o_field_highlight) .o_field_widget:not(.o_field_invalid):not(.o_field_highlight) .o_input:not(:hover):not(:focus) {
+  --o-input-border-color: var(--hexadash-border-color) !important;
+}
+
+select>option {
+  background: var(--body-bg);
+  border: var(--hexadash-border-color);
+  border-radius: 10px;
+}
+
+.o_base_settings_view .o_form_renderer .o_setting_container .settings {
+  background-color: var(--hexadash-card-bg) !important;
+}
+
+.o_searchview {
+  background-color: var(--hexadash-card-bg) !important;
+  border: 1px solid var(--hexadash-border-color) !important;
+}
+
+.o_searchview_dropdown_toggler.btn-outline-secondary {
+  --btn-color: var(--hexadash-text-dark) !important;
+  --btn-bg: var(--hexadash-card-bg) !important;
+  --btn-hover-color: var(--hexadash-body-bg) !important;
+  --btn-hover-bg: var(--hexadash-text-dark) !important;
+  --btn-border-color: var(--hexadash-border-color) !important;
+  --btn-active-color: #e0d1f2 !important;
+  --btn-active-bg: #212529 !important;
+}
+
+.btn-link.text-primary {
+  color: var(--hexadash-text-dark) !important;
+}
+
+.btn-link.btn-primary:hover,
+.btn-link.btn-primary:focus,
+.btn-link.btn-primary.focus,
+.btn-link.text-primary:hover,
+.btn-link.text-primary:focus,
+.btn-link.text-primary.focus {
+  color: var(--hexadash-text-light) !important;
+}
+
+.o_switch_company_menu_items .o_switch_company_item.focus>* {
+  background-color: var(--gray-800) !important;
+}
+
+.bg-primary-subtle {
+  background-color: var(--hexadash-purple-light) !important;
+}
+
+.o_spreadsheet_dashboard_search_panel.bg-view,.bg-view {
+  background-color: var(--hexadash-card-bg) !important;
+}
+
+.opacity-100-hover.bg-view{
+  background-color: var(--hexadash-text-light) !important;
+}
+
+.o_spreadsheet_dashboard_search_panel li:hover:not(.active) {
+  background-color: var(--hexadash-purple-light) !important;
+  color: var(--hexadash-purple) !important;
+}
+
+.o_spreadsheet_dashboard_action .o_renderer .o-spreadsheet .o-grid {
+  background-color: var(--hexadash-card-bg) !important;
+}
+
+.bg-100{
+  background-color: var(--hexadash-card-bg) !important;
+  color: var(--hexadash-text-dark) !important;
+}
+.o_pivot table .o_pivot_header_cell_opened,.o_pivot table .o_pivot_measure_row, .o_pivot table .o_pivot_origin_row, .o_pivot table .o_pivot_header_cell_closed {
+  color: var(--hexadash-text-dark) !important;
+}
+  
+.o_pivot table .o_pivot_measure_row:hover, .o_pivot table .o_pivot_origin_row:hover, .o_pivot table .o_pivot_header_cell_closed:hover, .o_pivot table .o_pivot_header_cell_opened:hover{
+  background-color: var(--hexadash-purple-light) !important;
+  color: var(--hexadash-purple) !important;
+}
+.fc-scrollgrid-sync-table{
+  background-color: var(--hexadash-card-bg) !important;
+  color: var(--hexadash-text-dark) !important;
 }

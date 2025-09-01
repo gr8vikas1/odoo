@@ -1,9 +1,187 @@
 $o-navbar-badge-bg: $o-brand-primary;
-$mk-appbar-color: #dee2e6 !default;
-$mk-appbar-active: $o-brand-primary !default;
-$mk-appbar-background: #111827 !default;
-
 $mk-sidebar-large-width: 146px !default;
 $mk-sidebar-small-width: 70px !default;
 $o-form-renderer-max-width: 3840px;
 $o-form-view-sheet-max-width: 2560px;
+$mk_color_appsmenu_text: var(--hexadash-text-dark);
+$mk_color_appbar_text: var(--hexadash-text-light);
+$mk_color_appbar_active: #8231d3;
+$mk_color_appbar_background: var(--hexadash-card-bg);
+
+// Override
+
+$mk-appsmenu-color: $mk_color_appsmenu_text;
+$mk-appbar-color: $mk_color_appbar_text;
+$mk-appbar-active: $mk_color_appbar_active;
+$mk-appbar-background: $mk_color_appbar_background;
+
+// Light Theme (Default)
+:root,
+.mk_theme_mode_light {
+  --mk-appbar-color: #dee2e6;
+  --mk-appbar-active: #8231d3;
+  --mk-appbar-background: #111827;
+
+  --hexadash-purple: #8231d3;
+  --hexadash-purple-light: #f8f0ff;
+  --hexadash-body-bg: #F4F5F7;
+  --hexadash-card-bg: #ffffff;
+  --hexadash-text-dark: #272b41;
+  --hexadash-text-light: #5a5f7d;
+  --hexadash-border-color: #e3e6ef;
+  --hexadash-success: #00aa00;
+  --hexadash-danger: #ff4d4f;
+  --hexadash-font-family: 'Jost', sans-serif;
+  --hexadash-thead-bg: #F8F9FA;
+  .o_main_navbar .o_menu_systray .badge {
+    color: #fff !important;
+  }
+
+  --hexadash-color: RGBA(33, 37, 41, var(--text-opacity, 1));
+
+  .breadcrumb {
+    --breadcrumb-bg: var(--hexadash-body-bg);
+  }
+
+}
+
+.mk_theme_mode_dark {
+  --mk-appbar-color: #E4E4E4;
+  --mk-appbar-background: #3C3E4B;
+
+  --hexadash-purple: #8231d3;
+  --hexadash-purple-light: #3a2e4a;
+  --hexadash-body-bg: #1c1c24;
+  --hexadash-card-bg: #282834;
+  --hexadash-text-dark: #ffffff;
+  --hexadash-text-light: #a0a0b8;
+  --hexadash-border-color: #3a3a4a;
+  --hexadash-thead-bg: #323541;
+  --hexadash-color: rgba(255, 255, 255, 0.85);
+  --body-color: var(--hexadash-text-dark);
+  --body-bg: var(--hexadash-card-bg);
+  --dropdown-border-color: var(--hexadash-border-color);
+  --border-color: var(--hexadash-border-color);
+
+
+  // .btn {
+  //   --btn-color: var(--hexadash-text-dark) !important;
+  //   --btn-bg: var(--hexadash-body-bg) !important;
+  //   --btn-border-color: var(--hexadash-border-color) !important;
+  // }
+  .o_searchview_facet {
+    color: var(--hexadash-body-bg) !important;
+  }
+  
+  .btn-light {
+    --btn-color: var(--hexadash-text-dark) !important;
+    --btn-bg: var(--hexadash-body-bg) !important;
+    --btn-border-color: var(--hexadash-border-color) !important;
+  }
+  .o_searchview_dropdown_toggler.btn-outline-secondary {
+    --btn-color:var(--hexadash-text-dark) !important;
+    --btn-bg: var(--hexadash-card-bg)  !important;
+    --btn-hover-color: var(--hexadash-text-dark) !important;
+    --btn-hover-bg: transparent !important;
+  }
+  .btn-outline-secondary {
+    --btn-color: var(--hexadash-body-bg) !important;
+    --btn-bg: var(--hexadash-text-dark) !important;
+    --btn-hover-color: var(--hexadash-text-dark) !important;
+    --btn-hover-bg: transparent !important;
+  }
+
+  .form-switch .form-check-input {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+  }
+
+  .text-primary {
+    --text-opacity: 1;
+    color: rgba(130, 49, 211, var(--text-opacity)) !important;
+  }
+
+  .text-700 {
+
+    --text-opacity: 1;
+    color: rgba(255, 255, 255, var(--text-opacity)) !important;
+  }
+  .o_notification {
+    background-color: var(--hexadash-card-bg) !important; 
+  }
+
+  .popover {
+    --popover-bg: var(--hexadash-card-bg) !important;
+    --popover-border-color: var(--hexadash-border-color) !important;
+    --popover-header-color: var(--hexadash-text-dark) !important;
+    --popover-header-bg: var(--hexadash-card-bg) !important;
+    --popover-body-color: var(--hexadash-text-dark) !important;
+    --popover-body-bg: var(--hexadash-card-bg) !important;
+  }
+
+  .btn-close {
+    --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  }
+
+  .dropdown-menu {
+    --dropdown-divider-bg: var(--hexadash-border-color) !important;
+    --dropdown-border-color: var(--hexadash-border-color) !important;
+  }
+
+  .o_list_renderer {
+    --ListRenderer-thead-bg-color: var(--hexadash-thead-bg) !important;
+    --ListRenderer-thead-bg-active-color: var(--hexadash-border-color) !important;
+    --ListRenderer-thead-border-end-color: var(--hexadash-border-color) !important;
+  }
+
+  .list-group {
+    --list-group-bg: var(--hexadash-card-bg) !important;
+    --list-group-active-color: var(--hexadash-purple) !important;
+    --list-group-active-bg: var(--hexadash-purple-light) !important;
+  }
+
+  .nav-tabs {
+    --nav-tabs-border-color: var(--hexadash-border-color) !important;
+    --nav-tabs-link-active-color: var(---hexadash-purple) !important;
+    --nav-tabs-link-active-bg: var(--hexadash-thead-bg) !important;
+    --nav-tabs-link-active-border-color: var(--hexadash-border-color) !important;
+    --nav-tabs-link-hover-border-color: var(--hexadash-border-color) !important;
+  }
+
+  .modal {
+    --modal-bg: var(--hexadash-card-bg) !important;
+    --modal-border-color: var(--hexadash-border-color) !important;
+  }
+
+  .o_notebook {
+    --notebook-link-border-color-active: var(--hexadash-border-color) !important;
+    --notebook-link-border-color-active-accent: var(--hexadash-border-color) !important;
+  }
+
+  .nav {
+    --nav-link-color: var(--hexadash-text-dark) !important;
+    --nav-link-hover-color: var(--hexadash-text-light) !important;
+  }
+
+  .text-dark {
+    color: var(--hexadash-text-dark) !important;
+  }
+
+  .text-muted {
+    color: var(--hexadash-text-light) !important;
+  }
+
+  .o_kanban_renderer {
+    --Kanban-background: var(--hexadash-body-bg) !important;
+  }
+
+  .o_base_settings_view .o_form_renderer {
+    --settings__tab-bg: var(--hexadash-card-bg) !important;
+    --settings__tab-color: var(--hexadash-text-dark) !important;
+    --settings__title-bg: var(--hexadash-border-color) !important;
+  }
+
+  .border-end {
+    border-right: var(--border-width) var(--border-style) var(--hexadash-border-color) !important;
+  }
+
+}

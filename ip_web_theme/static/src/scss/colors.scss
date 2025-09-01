@@ -1,8 +1,7 @@
 // Colors
-
-$mk_color_appsmenu_text: --hexadash-text-dark;
+$mk_color_appsmenu_text: var(--hexadash-text-dark);
 $mk_color_appbar_text: #DEE2E6;
-$mk_color_appbar_active: #5D8DA8;
+$mk_color_appbar_active: #8231d3;
 $mk_color_appbar_background: #111827;
 
 // Override
